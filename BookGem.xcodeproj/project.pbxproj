@@ -7,18 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34175E3229A3D98B0019B816 /* BookRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34175E3129A3D98B0019B816 /* BookRouter.swift */; };
+		34175E3529A3DC640019B816 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34175E3429A3DC640019B816 /* Book.swift */; };
+		34175E3829A3E6980019B816 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34175E3729A3E6980019B816 /* HomeViewModel.swift */; };
 		345CA28B29A3240D00A977D4 /* BookGemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CA28A29A3240D00A977D4 /* BookGemApp.swift */; };
 		345CA28D29A3240D00A977D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CA28C29A3240D00A977D4 /* ContentView.swift */; };
 		345CA28F29A3240F00A977D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345CA28E29A3240F00A977D4 /* Assets.xcassets */; };
 		345CA29229A3240F00A977D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345CA29129A3240F00A977D4 /* Preview Assets.xcassets */; };
+		345CA29B29A3248200A977D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CA29A29A3248200A977D4 /* NetworkService.swift */; };
+		345CA29E29A326FB00A977D4 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CA29D29A326FB00A977D4 /* StatusCode.swift */; };
+		345CA2A029A3282200A977D4 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CA29F29A3282200A977D4 /* NetworkErrors.swift */; };
+		345CA2A229A3287200A977D4 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CA2A129A3287200A977D4 /* HttpMethod.swift */; };
+		345CA2A429A328AC00A977D4 /* HttpHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CA2A329A328AC00A977D4 /* HttpHeader.swift */; };
+		345CA2A729A32A5600A977D4 /* FailureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CA2A629A32A5600A977D4 /* FailureModel.swift */; };
+		345CA2A929A32B3700A977D4 /* ProResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CA2A829A32B3700A977D4 /* ProResult.swift */; };
+		345CA2AB29A32C3C00A977D4 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CA2AA29A32C3C00A977D4 /* BaseRouter.swift */; };
+		345CA2AD29A33F6200A977D4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CA2AC29A33F6200A977D4 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34175E3129A3D98B0019B816 /* BookRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRouter.swift; sourceTree = "<group>"; };
+		34175E3429A3DC640019B816 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		34175E3729A3E6980019B816 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		345CA28729A3240D00A977D4 /* BookGem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookGem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		345CA28A29A3240D00A977D4 /* BookGemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookGemApp.swift; sourceTree = "<group>"; };
 		345CA28C29A3240D00A977D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		345CA28E29A3240F00A977D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		345CA29129A3240F00A977D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		345CA29A29A3248200A977D4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		345CA29D29A326FB00A977D4 /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
+		345CA29F29A3282200A977D4 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		345CA2A129A3287200A977D4 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		345CA2A329A328AC00A977D4 /* HttpHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeader.swift; sourceTree = "<group>"; };
+		345CA2A629A32A5600A977D4 /* FailureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureModel.swift; sourceTree = "<group>"; };
+		345CA2A829A32B3700A977D4 /* ProResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProResult.swift; sourceTree = "<group>"; };
+		345CA2AA29A32C3C00A977D4 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		345CA2AC29A33F6200A977D4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +56,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34175E3029A3D97D0019B816 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				34175E3129A3D98B0019B816 /* BookRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		34175E3329A3DC560019B816 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34175E3429A3DC640019B816 /* Book.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		34175E3629A3E66B0019B816 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				34175E3729A3E6980019B816 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		345CA27E29A3240D00A977D4 = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +99,14 @@
 		345CA28929A3240D00A977D4 /* BookGem */ = {
 			isa = PBXGroup;
 			children = (
+				34175E3629A3E66B0019B816 /* ViewModel */,
+				34175E3329A3DC560019B816 /* Model */,
+				345CA29829A3245900A977D4 /* Services */,
 				345CA28A29A3240D00A977D4 /* BookGemApp.swift */,
 				345CA28C29A3240D00A977D4 /* ContentView.swift */,
 				345CA28E29A3240F00A977D4 /* Assets.xcassets */,
 				345CA29029A3240F00A977D4 /* Preview Content */,
+				345CA2AC29A33F6200A977D4 /* MainView.swift */,
 			);
 			path = BookGem;
 			sourceTree = "<group>";
@@ -65,6 +117,46 @@
 				345CA29129A3240F00A977D4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		345CA29829A3245900A977D4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				345CA29929A3247200A977D4 /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		345CA29929A3247200A977D4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				34175E3029A3D97D0019B816 /* Routers */,
+				345CA29C29A3265F00A977D4 /* NetworkComponents */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		345CA29C29A3265F00A977D4 /* NetworkComponents */ = {
+			isa = PBXGroup;
+			children = (
+				345CA29A29A3248200A977D4 /* NetworkService.swift */,
+				345CA2AA29A32C3C00A977D4 /* BaseRouter.swift */,
+				345CA2A529A328F100A977D4 /* FailureModel */,
+				345CA29D29A326FB00A977D4 /* StatusCode.swift */,
+				345CA29F29A3282200A977D4 /* NetworkErrors.swift */,
+				345CA2A129A3287200A977D4 /* HttpMethod.swift */,
+				345CA2A329A328AC00A977D4 /* HttpHeader.swift */,
+				345CA2A829A32B3700A977D4 /* ProResult.swift */,
+			);
+			path = NetworkComponents;
+			sourceTree = "<group>";
+		};
+		345CA2A529A328F100A977D4 /* FailureModel */ = {
+			isa = PBXGroup;
+			children = (
+				345CA2A629A32A5600A977D4 /* FailureModel.swift */,
+			);
+			path = FailureModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +230,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				345CA28D29A3240D00A977D4 /* ContentView.swift in Sources */,
+				345CA29B29A3248200A977D4 /* NetworkService.swift in Sources */,
+				345CA2A029A3282200A977D4 /* NetworkErrors.swift in Sources */,
+				345CA29E29A326FB00A977D4 /* StatusCode.swift in Sources */,
+				345CA2A229A3287200A977D4 /* HttpMethod.swift in Sources */,
+				345CA2A929A32B3700A977D4 /* ProResult.swift in Sources */,
 				345CA28B29A3240D00A977D4 /* BookGemApp.swift in Sources */,
+				34175E3229A3D98B0019B816 /* BookRouter.swift in Sources */,
+				345CA2AD29A33F6200A977D4 /* MainView.swift in Sources */,
+				34175E3829A3E6980019B816 /* HomeViewModel.swift in Sources */,
+				345CA2AB29A32C3C00A977D4 /* BaseRouter.swift in Sources */,
+				345CA2A729A32A5600A977D4 /* FailureModel.swift in Sources */,
+				34175E3529A3DC640019B816 /* Book.swift in Sources */,
+				345CA2A429A328AC00A977D4 /* HttpHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
