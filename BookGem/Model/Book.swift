@@ -85,7 +85,8 @@ struct Review: Codable {
     }
 }
 
-enum BookList: Int, CaseIterable {
+enum BookList: CaseIterable {
+    
     case Manga
     case YoungAdult
     case Science
