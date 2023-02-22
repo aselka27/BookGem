@@ -28,6 +28,7 @@
 		34AD1EAF29A4CA77002ABC3D /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD1EAE29A4CA77002ABC3D /* FavoritesView.swift */; };
 		34AD1EB129A4CABF002ABC3D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD1EB029A4CABF002ABC3D /* ProfileView.swift */; };
 		34AD1EB329A4CAE8002ABC3D /* BookCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD1EB229A4CAE8002ABC3D /* BookCategoryView.swift */; };
+		34B6262C29A5EBC500CB5733 /* SavedBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B6262B29A5EBC500CB5733 /* SavedBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		34AD1EAE29A4CA77002ABC3D /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		34AD1EB029A4CABF002ABC3D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		34AD1EB229A4CAE8002ABC3D /* BookCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCategoryView.swift; sourceTree = "<group>"; };
+		34B6262B29A5EBC500CB5733 /* SavedBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				34AD1EAE29A4CA77002ABC3D /* FavoritesView.swift */,
 				34AD1EB029A4CABF002ABC3D /* ProfileView.swift */,
 				34AD1EB229A4CAE8002ABC3D /* BookCategoryView.swift */,
+				34B6262B29A5EBC500CB5733 /* SavedBookView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				34175E3829A3E6980019B816 /* HomeViewModel.swift in Sources */,
 				345CA2AB29A32C3C00A977D4 /* BaseRouter.swift in Sources */,
 				34AD1EAD29A4CA35002ABC3D /* CustomTabView.swift in Sources */,
+				34B6262C29A5EBC500CB5733 /* SavedBookView.swift in Sources */,
 				345CA2A729A32A5600A977D4 /* FailureModel.swift in Sources */,
 				34175E3529A3DC640019B816 /* Book.swift in Sources */,
 				34175E3A29A4703C0019B816 /* MainView.swift in Sources */,

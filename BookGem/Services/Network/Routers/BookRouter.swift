@@ -12,6 +12,7 @@ enum BookRouter: BaseRouter {
     
 case getBooks(list: String)
 case getBestSeller(date: String)
+case getBookReview(bookTitle: String)
     
     var path: String {
         switch self {
@@ -19,6 +20,9 @@ case getBestSeller(date: String)
                 return "/lists"
         case .getBestSeller:
             return "/lists/overview.json"
+        
+        case .getBookReview:
+            return "/reviews.json"
         }
     }
     
@@ -35,6 +39,8 @@ case getBestSeller(date: String)
             return [.init(name: "list", value: "\(list)")]
         case .getBestSeller(let date):
             return [.init(name: "published_date", value: "\(date)")]
+        case .getBookReview(let bookTitle):
+            return [.init(name: "title", value: "\(bookTitle)")]
         }
     }
     

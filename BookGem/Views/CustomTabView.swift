@@ -12,7 +12,11 @@ var tabs = ["home", "favorite", "profile"]
 struct CustomTabView: View {
     
     @State var selectedTab = "home"
-    @State var edge = UIApplication.shared.windows.first?.safeAreaInsets
+    @State var edge = UIApplication
+        .shared
+        .connectedScenes
+        .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+        .first { $0.isKeyWindow }
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
@@ -20,7 +24,7 @@ struct CustomTabView: View {
                 HomeView()
                     .tag("home")
                 FavoritesView()
-                    .tag("favorites")
+                    .tag("favorite")
                 ProfileView()
                     .tag("profile")
             }
@@ -42,7 +46,7 @@ struct CustomTabView: View {
             .shadow(color: .black.opacity(0.15), radius: 5 , x: 5, y: 5)
             .shadow(color: .black.opacity(0.15), radius: 5 , x: -5, y: -5)
             .padding(.horizontal)
-            .padding(.bottom, edge!.bottom == 0 ? 20 : 0)
+            .padding(.bottom, edge!.safeAreaInsets.bottom == 0 ? 20 : 0)
             // ignoring tab view elevation
         }
         .ignoresSafeArea(.keyboard, edges: .bottom)

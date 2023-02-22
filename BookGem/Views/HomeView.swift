@@ -9,7 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     @State var txt = ""
-    @State var edge = UIApplication.shared.windows.first?.safeAreaInsets
+    @State var edge = UIApplication
+        .shared
+        .connectedScenes
+        .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+        .first { $0.isKeyWindow }
     var bookList = [BookList]()
     var body: some View {
         VStack {
@@ -35,7 +39,7 @@ struct HomeView: View {
                     HStack(spacing: 15) {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.gray)
-                        TextField("Search Courses", text:  $txt)
+                        TextField("Search Book Genres", text:  $txt)
                     }
                     .padding(.vertical, 12)
                     .padding(.horizontal)
@@ -64,11 +68,18 @@ struct HomeView: View {
                     .padding(.top)
                 }
                 .padding()
-                .padding(.bottom, edge!.bottom + 70)
+                .padding(.bottom, edge!.safeAreaInsets.bottom + 70)
             }
         }
         .background(Color.black.opacity(0.05).ignoresSafeArea(.all,  edges: .all))
+        .onTapGesture {
+            dismissKeyboard()
+        }
     }
+    
+    func dismissKeyboard() {
+        edge?.endEditing(true)// 4
+       }
 }
 
 //struct MainView_Previews: PreviewProvider {

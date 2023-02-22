@@ -17,9 +17,11 @@ protocol HomeViewModelProtocol {
 }
 
 
-class HomeViewModel: HomeViewModelProtocol {
+class HomeViewModel: HomeViewModelProtocol, ObservableObject {
    
     let networkService = NetworkService.shared
+    @Published var searchText: String = ""
+    @Published var allBooks: [Result] = []
    
     func getYoungAdult() {
         networkService.sendRequest(BookRouter.getBooks(list: BookList.YoungAdult.encodedName).createURLRequest())
@@ -46,6 +48,10 @@ class HomeViewModel: HomeViewModelProtocol {
     
     func getManga() {
         
+    }
+    
+    func addSubscribers() {
+       
     }
     
    
