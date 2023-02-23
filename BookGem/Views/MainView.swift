@@ -9,7 +9,11 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-       CustomTabView()
+        NavigationView {
+            CustomTabView()
+                .toolbar(.hidden)
+        }
+       
     }
 }
 

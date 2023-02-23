@@ -21,7 +21,7 @@ struct CustomTabView: View {
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             TabView(selection: $selectedTab) {
-                HomeView()
+                HomeView( vm: HomeViewModel())
                     .tag("home")
                 FavoritesView()
                     .tag("favorite")

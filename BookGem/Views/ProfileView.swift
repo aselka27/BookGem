@@ -10,19 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Image("feather")
-                    .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 25, height: 25)
-                    .padding([.leading])
-                Text("Profile")
-                    .foregroundColor(.black)
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-            }
+           profileHeader
             Spacer()
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
@@ -76,9 +64,6 @@ struct ProfileView: View {
                         .padding(.horizontal)
                     
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 1), spacing: 20) {
-//                        ForEach(BookList.allCases, id: \.name) { category in
-//                            BookCategoryView(bookCategory: category)
-//                        }
                         SavedBookView()
                     }
                     .padding(.top)
@@ -92,8 +77,25 @@ struct ProfileView: View {
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
+extension ProfileView {
+    private var profileHeader: some View {
+        HStack {
+            Image("feather")
+                .resizable()
+                .renderingMode(.original)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 25, height: 25)
+                .padding([.leading])
+            Text("Profile")
+                .foregroundColor(.black)
+                .font(.title)
+                .fontWeight(.bold)
+            Spacer()
+        }
     }
 }
+//struct ProfileView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileView()
+//    }
+//}

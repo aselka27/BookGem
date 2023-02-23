@@ -19,7 +19,7 @@ protocol BaseRouter {
 
 extension BaseRouter {
     var host: String {
-        return "api.nytimes.com/svc/books/v3"
+        return "api.nytimes.com"
     }
     var scheme: String {
         return "https"
@@ -31,6 +31,7 @@ extension BaseRouter {
         urlComponents.host = host
         urlComponents.path = path
         urlComponents.queryItems = queryParameter
+    
         
         guard let url = urlComponents.url else {
             fatalError(URLError(.unsupportedURL).localizedDescription)

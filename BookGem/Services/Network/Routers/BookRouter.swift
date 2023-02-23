@@ -17,12 +17,12 @@ case getBookReview(bookTitle: String)
     var path: String {
         switch self {
         case .getBooks:
-                return "/lists"
+                return "/svc/books/v3/lists.json"
         case .getBestSeller:
-            return "/lists/overview.json"
+            return "/svc/books/v3/lists/overview.json"
         
         case .getBookReview:
-            return "/reviews.json"
+            return "/svc/books/v3/reviews.json"
         }
     }
     
@@ -36,7 +36,7 @@ case getBookReview(bookTitle: String)
     var queryParameter: [URLQueryItem]? {
         switch self {
         case .getBooks(let list):
-            return [.init(name: "list", value: "\(list)")]
+            return [.init(name: "list", value: "\(list)"), .init(name: "api-key", value: "Jgh2eiFEEXTmBaBT0GjYxYYsE7V2H6s3")]
         case .getBestSeller(let date):
             return [.init(name: "published_date", value: "\(date)")]
         case .getBookReview(let bookTitle):

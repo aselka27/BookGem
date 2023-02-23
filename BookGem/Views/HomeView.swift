@@ -15,6 +15,7 @@ struct HomeView: View {
         .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
         .first { $0.isKeyWindow }
     var bookList = [BookList]()
+    let vm: HomeViewModel
     var body: some View {
         VStack {
             HStack {
@@ -74,6 +75,9 @@ struct HomeView: View {
         .background(Color.black.opacity(0.05).ignoresSafeArea(.all,  edges: .all))
         .onTapGesture {
             dismissKeyboard()
+        }
+        .onAppear {
+            vm.getYoungAdult()
         }
     }
     

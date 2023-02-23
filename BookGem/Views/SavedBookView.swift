@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SavedBookView: View {
+    
+    
     var body: some View {
         HStack {
            Image("gatsby")
@@ -31,9 +33,9 @@ struct SavedBookView: View {
     }
 }
 
-struct SavedBookView_Previews: PreviewProvider {
-    static var previews: some View {
-        SavedBookView()
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct SavedBookView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SavedBookView(book: )
+//            .previewLayout(.sizeThatFits)
+//    }
+//}
