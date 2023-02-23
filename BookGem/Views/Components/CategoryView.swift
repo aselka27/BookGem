@@ -35,8 +35,8 @@ struct CategoryView: View {
     }
 }
 
-struct CategoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryView(vm: CategoryViewModel())
-    }
-}
+//struct CategoryView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CategoryView(vm: CategoryViewModel())
+//    }
+//}

@@ -39,8 +39,11 @@ struct BookView: View {
                     .foregroundColor(.secondary)
             }
             .padding(.leading)
-            .padding(.bottom)
+            .padding(.vertical)
+            Spacer()
+             
         }
+        .padding(.leading)
     }
 }
 
