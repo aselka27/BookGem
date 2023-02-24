@@ -18,23 +18,7 @@ struct HomeView: View {
     let vm: HomeViewModel
     var body: some View {
         VStack {
-            HStack {
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Hello Asel")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Text("Find your favorite books")
-                }
-                .foregroundColor(.black)
-                
-                Spacer(minLength: 0)
-                
-                Image("woman")
-                    .resizable()
-                    .renderingMode(.original)
-                    .frame(width: 50, height: 50)
-            }
-            .padding()
+           navBar
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     HStack(spacing: 15) {
@@ -61,9 +45,13 @@ struct HomeView: View {
                     .foregroundColor(.black)
                     .padding(.top, 25)
                     
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 2), spacing: 20) {
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 3), spacing: 20) {
                         ForEach(BookList.allCases, id: \.name) { category in
-                            BookCategoryView(bookCategory: category)
+                            NavigationLink {
+                                CategoryView(category: category)
+                            } label: {
+                                BookCategoryView(bookCategory: category)
+                            }
                         }
                     }
                     .padding(.top)
@@ -76,14 +64,33 @@ struct HomeView: View {
         .onTapGesture {
             dismissKeyboard()
         }
-        .onAppear {
-            vm.getYoungAdult()
-        }
     }
     
     func dismissKeyboard() {
         edge?.endEditing(true)// 4
        }
+}
+
+extension HomeView {
+    private var navBar: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Hello Asel")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text("Find your favorite books")
+            }
+            .foregroundColor(.black)
+            
+            Spacer(minLength: 0)
+            
+            Image("woman")
+                .resizable()
+                .renderingMode(.original)
+                .frame(width: 50, height: 50)
+        }
+        .padding()
+    }
 }
 
 //struct MainView_Previews: PreviewProvider {

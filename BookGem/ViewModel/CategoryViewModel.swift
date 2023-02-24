@@ -15,8 +15,8 @@ class CategoryViewModel: ObservableObject {
     @Published var books: [Book] = []
     private var cancellableSet: Set<AnyCancellable> = []
     
-    func getBook(category: String) {
-        fetch(category)
+    func getBook(category: BookList) {
+        fetch(category.encodedName)
              .sink { bookModel in
                  guard let result = bookModel?.results else { return }
                  self.books = result

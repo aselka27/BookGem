@@ -156,7 +156,7 @@ enum BookList: CaseIterable {
         case .Science:
             return "science"
         case .Business:
-            return "business"
+            return "business-books"
         case .Education:
             return "education"
         }

@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct CategoryView: View {
-//   var category: BookList
-    @StateObject var vm: CategoryViewModel
+    var category: BookList
+    @StateObject var vm = CategoryViewModel()
+    
+    init(category: BookList) {
+        self.category = category
+    }
     
     var body: some View {
         VStack {
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text("Young Adult")
+                    Text(category.name)
                         .font(.title)
                         .fontWeight(.bold)
                         .padding(.leading)
@@ -30,7 +34,7 @@ struct CategoryView: View {
                 }
             }
         } .onAppear {
-            self.vm.getBook(category: BookList.YoungAdult.encodedName)
+            self.vm.getBook(category: category)
         }
     }
 }
