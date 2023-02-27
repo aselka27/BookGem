@@ -27,8 +27,17 @@ struct CategoryView: View {
                         
                     Spacer(minLength: 30)
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 1), spacing: 20) {
+                        
                         ForEach(vm.books, id: \.amazonProductURL ) { book in
-                            BookView(book: book)
+                            NavigationLink {
+                                if let bookDetailModel = book.bookDetails?[0] {
+                                    BookDetailView(bookDetailModel: bookDetailModel)
+                                }
+                            } label: {
+                                BookView(book: book, vm: vm)
+                            }
+
+                            
                         }
                     }
                 }
@@ -38,7 +47,7 @@ struct CategoryView: View {
         }
     }
 }
-
+//
 //struct CategoryView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        CategoryView(vm: CategoryViewModel())

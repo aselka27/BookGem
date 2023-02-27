@@ -9,30 +9,39 @@ import SwiftUI
 
 struct BookDetailView: View {
     @State var isSaved = false
+    private let bookDetailModel: BookDetail
+    init(bookDetailModel: BookDetail) {
+        self.bookDetailModel = bookDetailModel
+    }
+   
     var body: some View {
            
         
             
             VStack {
                 VStack(alignment: .center, spacing: 8) {
-                    Image("gatsby")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(20)
-                        .frame(width: 220, height: 300)
-                    Text("Catcher in the Reye")
+//                    Image("gatsby")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .cornerRadius(20)
+//                        .frame(width: 220, height: 300)
+                    BookCoverView(isbn: bookDetailModel.primaryIsbn13 ?? "")
+                    Text(bookDetailModel.title ?? "N/A")
                         .font(.title3)
                         .fontWeight(.bold)
                         .padding(.top, 10)
-                    Text("J.D. Salinger")
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(0)
+                    Text(bookDetailModel.author ?? "N/A")
                         .font(.body)
                         .fontWeight(.regular)
                         .foregroundColor(.gray)
                         .padding(.top, 5)
                 }
                 
+                
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Description")
+                    Text(bookDetailModel.description ?? "N/A")
                         .font(.headline)
                         .fontWeight(.bold)
                     Text("When we can and cannot trust our intuitions in making business and personal decisions.")
@@ -41,6 +50,7 @@ struct BookDetailView: View {
                         .foregroundColor(.gray)
                 }
                 .padding(.top)
+                .padding(.horizontal)
                 
                 Spacer()
                 
@@ -49,14 +59,11 @@ struct BookDetailView: View {
                 } label: {
                     Text("Buy on Amazon")
                         .foregroundColor(.white)
-                        .padding(.horizontal, 5)
+                        .padding(.horizontal)
+                        .padding(.vertical)
                 }
-                .background(
-                Rectangle()
-                    .cornerRadius(12)
-                    .frame(width: 120, height: 45)
-                )
-               
+                .background(Color.black)
+                .cornerRadius(10)
             }
             .padding(.top)
             .toolbar {
@@ -82,10 +89,10 @@ struct BookDetailView: View {
     
 }
 
-struct BookDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            BookDetailView()
-        }
-    }
-}
+//struct BookDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            BookDetailView()
+//        }
+//    }
+//}

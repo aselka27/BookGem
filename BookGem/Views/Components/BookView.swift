@@ -10,19 +10,26 @@ import SwiftUI
 struct BookView: View {
     
     private var book: Book
+    private var categoryViewModel: CategoryViewModel
     
-    init(book: Book) {
+    init(book: Book, vm: CategoryViewModel) {
         self.book = book
+        self.categoryViewModel = vm
     }
    
     var body: some View {
         HStack {
-            Image("gatsby")
-                .resizable()
-                .renderingMode(.original)
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 90, height: 135)
-                .cornerRadius(10)
+//            if let image = categoryViewModel.image {
+//                Image(uiImage: image)
+//                    .resizable()
+//                    .renderingMode(.original)
+//                    .aspectRatio(contentMode: .fill)
+//                    .frame(width: 90, height: 135)
+//                    .cornerRadius(10)
+//            } else {
+//                ProgressView()
+//            }
+            BookCoverView(isbn: book.bookDetails?[0].primaryIsbn13 ?? "")
             VStack(alignment: .leading, spacing: 10) {
                 Text(book.bookDetails?[0].title ?? "N/A")
                     .font(.title2)

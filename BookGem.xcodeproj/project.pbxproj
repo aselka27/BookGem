@@ -35,6 +35,10 @@
 		34AD1EB329A4CAE8002ABC3D /* BookCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD1EB229A4CAE8002ABC3D /* BookCategoryView.swift */; };
 		34B6262C29A5EBC500CB5733 /* SavedBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B6262B29A5EBC500CB5733 /* SavedBookView.swift */; };
 		34F157E529A729F30092FBF7 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F157E429A729F30092FBF7 /* CategoryViewModel.swift */; };
+		34F18E9929AC786200A8170C /* BookCoverRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F18E9829AC786200A8170C /* BookCoverRouter.swift */; };
+		34F18E9B29AC788500A8170C /* CoverRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F18E9A29AC788500A8170C /* CoverRouter.swift */; };
+		34F18E9D29AC81B900A8170C /* BookCoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F18E9C29AC81B900A8170C /* BookCoverViewModel.swift */; };
+		34F18E9F29AC829600A8170C /* BookCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F18E9E29AC829600A8170C /* BookCoverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +71,10 @@
 		34AD1EB229A4CAE8002ABC3D /* BookCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCategoryView.swift; sourceTree = "<group>"; };
 		34B6262B29A5EBC500CB5733 /* SavedBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedBookView.swift; sourceTree = "<group>"; };
 		34F157E429A729F30092FBF7 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		34F18E9829AC786200A8170C /* BookCoverRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverRouter.swift; sourceTree = "<group>"; };
+		34F18E9A29AC788500A8170C /* CoverRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverRouter.swift; sourceTree = "<group>"; };
+		34F18E9C29AC81B900A8170C /* BookCoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverViewModel.swift; sourceTree = "<group>"; };
+		34F18E9E29AC829600A8170C /* BookCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				34175E3129A3D98B0019B816 /* BookRouter.swift */,
+				34F18E9829AC786200A8170C /* BookCoverRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -102,6 +111,7 @@
 				34175E3729A3E6980019B816 /* HomeViewModel.swift */,
 				3402909529A6018E0042D4AC /* UserImageViewModel.swift */,
 				34F157E429A729F30092FBF7 /* CategoryViewModel.swift */,
+				34F18E9C29AC81B900A8170C /* BookCoverViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -165,6 +175,7 @@
 		345CA29C29A3265F00A977D4 /* NetworkComponents */ = {
 			isa = PBXGroup;
 			children = (
+				34F18E9A29AC788500A8170C /* CoverRouter.swift */,
 				345CA29A29A3248200A977D4 /* NetworkService.swift */,
 				345CA2AA29A32C3C00A977D4 /* BaseRouter.swift */,
 				345CA2A529A328F100A977D4 /* FailureModel */,
@@ -192,6 +203,7 @@
 				3426BD7429A62797001809D5 /* CategoryView.swift */,
 				3426BD7629A6289E001809D5 /* BookView.swift */,
 				34A0899D29A8CF8C000FB8CF /* BookDetailView.swift */,
+				34F18E9E29AC829600A8170C /* BookCoverView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -281,17 +293,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F18E9929AC786200A8170C /* BookCoverRouter.swift in Sources */,
 				345CA28D29A3240D00A977D4 /* ContentView.swift in Sources */,
 				34AD1EAF29A4CA77002ABC3D /* FavoritesView.swift in Sources */,
+				34F18E9F29AC829600A8170C /* BookCoverView.swift in Sources */,
 				345CA29B29A3248200A977D4 /* NetworkService.swift in Sources */,
 				345CA2A029A3282200A977D4 /* NetworkErrors.swift in Sources */,
 				34AD1EB329A4CAE8002ABC3D /* BookCategoryView.swift in Sources */,
 				345CA29E29A326FB00A977D4 /* StatusCode.swift in Sources */,
 				345CA2A229A3287200A977D4 /* HttpMethod.swift in Sources */,
+				34F18E9D29AC81B900A8170C /* BookCoverViewModel.swift in Sources */,
 				345CA2A929A32B3700A977D4 /* ProResult.swift in Sources */,
 				345CA28B29A3240D00A977D4 /* BookGemApp.swift in Sources */,
 				34175E3229A3D98B0019B816 /* BookRouter.swift in Sources */,
 				345CA2AD29A33F6200A977D4 /* HomeView.swift in Sources */,
+				34F18E9B29AC788500A8170C /* CoverRouter.swift in Sources */,
 				34AD1EB129A4CABF002ABC3D /* ProfileView.swift in Sources */,
 				34175E3829A3E6980019B816 /* HomeViewModel.swift in Sources */,
 				345CA2AB29A32C3C00A977D4 /* BaseRouter.swift in Sources */,

@@ -14,6 +14,7 @@ class CategoryViewModel: ObservableObject {
    private let networkService = NetworkService.shared
     @Published var books: [Book] = []
     private var cancellableSet: Set<AnyCancellable> = []
+    @Published var image: UIImage?
     
     func getBook(category: BookList) {
         fetch(category.encodedName)
@@ -34,4 +35,17 @@ class CategoryViewModel: ObservableObject {
             .replaceError(with: nil)
             .eraseToAnyPublisher()
     }
+    
+//     func fetchCover(isbn: String) {
+//        guard let url = URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-M.jpg") else { return }
+//        URLSession.shared.dataTaskPublisher(for: url)
+//               .map { image in
+//                   
+//                   
+//               }
+//               .replaceError(with: nil)
+//               .receive(on: DispatchQueue.main)
+//               .assign(to: \.image, on: self)
+//               .store(in: &cancellableSet)
+//       }
 }
