@@ -34,7 +34,7 @@ struct CategoryView: View {
                                     BookDetailView(bookDetailModel: bookDetailModel)
                                 }
                             } label: {
-                                BookView(book: book, vm: vm)
+                                BookView(book: book)
                             }
 
                             

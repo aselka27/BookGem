@@ -10,11 +10,9 @@ import SwiftUI
 struct BookView: View {
     
     private var book: Book
-    private var categoryViewModel: CategoryViewModel
     
-    init(book: Book, vm: CategoryViewModel) {
+    init(book: Book) {
         self.book = book
-        self.categoryViewModel = vm
     }
    
     var body: some View {

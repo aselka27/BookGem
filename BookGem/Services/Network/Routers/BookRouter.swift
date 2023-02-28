@@ -11,7 +11,7 @@ import Foundation
 enum BookRouter: BaseRouter {
     
 case getBooks(list: String)
-case getBestSeller(date: String)
+case getBestSeller(title: String)
 case getBookReview(bookTitle: String)
     
     var path: String {
@@ -19,7 +19,7 @@ case getBookReview(bookTitle: String)
         case .getBooks:
                 return "/svc/books/v3/lists.json"
         case .getBestSeller:
-            return "/svc/books/v3/lists/overview.json"
+            return "/svc/books/v3/lists/best-sellers/history.json"
         
         case .getBookReview:
             return "/svc/books/v3/reviews.json"
@@ -37,8 +37,8 @@ case getBookReview(bookTitle: String)
         switch self {
         case .getBooks(let list):
             return [.init(name: "list", value: "\(list)"), .init(name: "api-key", value: "Jgh2eiFEEXTmBaBT0GjYxYYsE7V2H6s3")]
-        case .getBestSeller(let date):
-            return [.init(name: "published_date", value: "\(date)")]
+        case .getBestSeller(let title):
+            return [.init(name: "title", value: "\(title)"), .init(name: "api-key", value: "Jgh2eiFEEXTmBaBT0GjYxYYsE7V2H6s3")]
         case .getBookReview(let bookTitle):
             return [.init(name: "title", value: "\(bookTitle)")]
         }
