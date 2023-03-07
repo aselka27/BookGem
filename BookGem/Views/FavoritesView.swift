@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+
+enum ViewStates {
+    case loading
+    case sucsess
+    case error
+}
+
 struct FavoritesView: View {
     
     @State var txt = ""
@@ -31,9 +38,11 @@ struct FavoritesView: View {
                     .clipShape(Capsule())
                 }
                 .padding(.horizontal)
+            
                 
                 VStack {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 1), alignment: .leading, spacing: 20) {
+                    
                         ForEach(vm.bestSellers, id: \.title) { book in
                             QueryView(book: book)
                         }

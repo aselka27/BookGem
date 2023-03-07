@@ -43,7 +43,7 @@ struct CategoryView: View {
                 }
             }
         } .onAppear {
-            self.vm.getBook(category: category)
+            vm.fetch(category)
         }
     }
 }

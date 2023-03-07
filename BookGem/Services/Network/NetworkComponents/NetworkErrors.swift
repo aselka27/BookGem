@@ -13,5 +13,21 @@ enum NetworkErrors: Error {
     case unauthorized
     case forbidden
     case notFound
-    case success 
+    case success
+    
+    
+    var message: String {
+        switch self {
+        case .badRequest:
+            return ""
+        case .unauthorized:
+            return ""
+        case .forbidden:
+            return ""
+        case .notFound:
+            return ""
+        case .success:
+            return ""
+        }
+    }
 }

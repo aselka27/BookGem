@@ -58,7 +58,7 @@ class HomeViewModel: HomeViewModelProtocol, ObservableObject {
     }
     
     private func fetchBooks() ->  AnyPublisher<BookModel?, Never>  {
-        networkService.sendRequest(BookRouter.getBooks(list: BookList.YoungAdult.encodedName).createURLRequest())
+        networkService.sendRequest(BookRouter.getBooks(list: BookList.YoungAdult.encodedName).createURLRequest(), responseType: BookModel.self)
             .map { (response: BookModel) -> BookModel in response}
             .mapError({ (error) -> Error in
                 print(error)

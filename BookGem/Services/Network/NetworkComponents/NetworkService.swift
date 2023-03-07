@@ -18,28 +18,21 @@ class NetworkService {
         return decoder
     }()
     
-    func sendRequest<T: Decodable>(_ request: URLRequest) -> AnyPublisher<T, Error> {
+    func sendRequest<T: Decodable>(_ request: URLRequest, responseType: T.Type) -> AnyPublisher<T, NetworkErrors> {
         URLSession.shared.dataTaskPublisher(for: request)
-            .map {
-                print(request.url)
-                let str = String(data: $0.data, encoding: .utf8)!.data(using: .utf8)!.prettyJson
-                if let str = str {
-                    print(request.url, str)
-                }
-                return $0.data }
+            .map { $0.data }
             .decode(type: T.self, decoder: NetworkService.jsonDecoder)
             .receive(on: RunLoop.main)
+            .mapError({ error -> NetworkErrors in
+                switch error {
+                case URLError.badURL:
+                    return .badRequest
+                case URLError.userAuthenticationRequired:
+                    return .unauthorized
+                default:
+                    return .notFound
+                }
+            })
             .eraseToAnyPublisher()
-    }
-}
-
-
-extension Data {
-    var prettyJson: String? {
-        guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
-              let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
-              let prettyPrintedString = String(data: data, encoding:.utf8) else { return nil }
-        
-        return prettyPrintedString
     }
 }
