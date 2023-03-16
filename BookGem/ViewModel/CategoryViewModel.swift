@@ -11,21 +11,12 @@ import Combine
 
 class CategoryViewModel: ObservableObject {
     
-   private let networkService = NetworkService.shared
+    private let networkService = NetworkService.shared
     @Published var books: [Book] = []
     private var cancellableSet: Set<AnyCancellable> = []
     @Published var image: UIImage?
     
-//    func getBook(category: BookList) {
-//        fetch(category.encodedName)
-//             .sink { bookModel in
-//                 guard let result = bookModel?.results else { return }
-//                 self.books = result
-//             }
-//             .store(in: &cancellableSet)
-//    }
-    
-     func fetch(_ category: BookList) {
+    func fetch(_ category: BookList) {
         networkService.sendRequest(BookRouter.getBooks(list: category.name).createURLRequest(), responseType: BookModel.self)
             .sink { completion in
                 switch completion {
@@ -50,32 +41,5 @@ class CategoryViewModel: ObservableObject {
                 self.books = result
             }
             .store(in: &cancellableSet)
-
     }
-    
-//     func fetchCover(isbn: String) {
-//        guard let url = URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-M.jpg") else { return }
-//        URLSession.shared.dataTaskPublisher(for: url)
-//               .map { image in
-//
-//
-//               }
-//               .replaceError(with: nil)
-//               .receive(on: DispatchQueue.main)
-//               .assign(to: \.image, on: self)
-//               .store(in: &cancellableSet)
-//       }
 }
-
-
-
-/*
- guard case .failure(let error) = completion else { return }
-             if case .decode(let data) = error {
-                 if let authError = try? JSONDecoder().decode(AuthorizationErrorResponse.self, from: data) {
-                     print(authError.data.first?.message ?? "")
-                 } else {
-                     print("Stories Decode Problem")
-                 }
-             }
- */

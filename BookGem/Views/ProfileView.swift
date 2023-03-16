@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @State var isPresented: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading) {
            profileHeader
@@ -37,7 +40,7 @@ struct ProfileView: View {
                         .padding(.top)
                         Spacer()
                         Button {
-                            //
+                            isPresented = true
                         } label: {
                             Text("Edit")
                                 .foregroundColor(.brown)
@@ -72,6 +75,9 @@ struct ProfileView: View {
                 
                 
             }
+        }
+        .sheet(isPresented: $isPresented) {
+            EditView()
         }
         
     }

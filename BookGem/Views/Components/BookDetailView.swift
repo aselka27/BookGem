@@ -53,7 +53,6 @@ struct BookDetailView: View {
                 .padding(.horizontal)
                 
                 Spacer()
-                
                 Button {
                     print("Buy Book")
                 } label: {

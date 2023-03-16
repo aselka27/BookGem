@@ -10,10 +10,6 @@ import SwiftUI
 
 protocol HomeViewModelProtocol {
     func getYoungAdult()
-    func getScience()
-    func getEducation()
-    func getBusiness()
-    func getManga()
 }
 
 
@@ -37,26 +33,6 @@ class HomeViewModel: HomeViewModelProtocol, ObservableObject {
             .store(in: &cancellableSet)
     }
     
-    func getScience() {
-        
-    }
-    
-    func getEducation() {
-        
-    }
-    
-    func getBusiness() {
-        
-    }
-    
-    func getManga() {
-        
-    }
-    
-    func addSubscribers() {
-       
-    }
-    
     private func fetchBooks() ->  AnyPublisher<BookModel?, Never>  {
         networkService.sendRequest(BookRouter.getBooks(list: BookList.YoungAdult.encodedName).createURLRequest(), responseType: BookModel.self)
             .map { (response: BookModel) -> BookModel in response}
@@ -67,7 +43,4 @@ class HomeViewModel: HomeViewModelProtocol, ObservableObject {
             .replaceError(with: nil)
             .eraseToAnyPublisher()
     }
-    
-   
-    
 }
